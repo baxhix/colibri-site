@@ -1,0 +1,35 @@
+name: Deploy API to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vps-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy on VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script_stop: true
+          script: |
+            set -e
+            cd /opt
+            if [ ! -d colibri-site ]; then
+              git clone https://github.com/baxhix/colibri-site.git
+            fi
+            cd /opt/colibri-site
+            git pull --ff-only origin main
+            cd infra/hostinger
+            docker compose up -d --build
+            docker compose ps
+            curl -fsS http://127.0.0.1:3000/health
