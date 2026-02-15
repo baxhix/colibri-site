@@ -1,0 +1,182 @@
+{
+  "navigation": {
+    "about": {
+      "label": "Sobre",
+      "href": "sobre.html",
+      "items": [
+        { "label": "Quem somos", "href": "sobre.html" },
+        { "label": "Fale conosco", "href": "contato.html" }
+      ]
+    },
+    "products": {
+      "label": "Produtos",
+      "href": "produtos.html",
+      "items": [
+        { "label": "Home Suspenso", "href": "produtos.html" },
+        { "label": "Home Theater", "href": "produtos.html" },
+        { "label": "Bancada", "href": "produtos.html" },
+        { "label": "Complementos", "href": "produtos.html" },
+        { "label": "Bancada e painel", "href": "produtos.html" }
+      ]
+    },
+    "blog": { "label": "Blog", "href": "blog.html" },
+    "clientArea": {
+      "label": "Área do Cliente",
+      "href": "https://colibrimoveis.simplificamais.com.br/"
+    }
+  },
+  "home": {
+    "heroTitle": "Móveis para<br />sua vida",
+    "heroSubtitle": "Coleção<br />2025",
+    "heroSlides": [
+      { "src": "https://picsum.photos/id/1060/1300/900", "alt": "Bancada Fortaleza" },
+      { "src": "https://picsum.photos/id/1043/1300/900", "alt": "Bancada Otawa" },
+      { "src": "https://picsum.photos/id/1059/1300/900", "alt": "Home Suspenso Loa" },
+      { "src": "https://picsum.photos/id/1031/1300/900", "alt": "Painel Bali" }
+    ],
+    "popularProducts": [
+      { "title": "Bancada Otawa", "image": "https://picsum.photos/id/1033/900/1000" },
+      { "title": "Home Theater Jordão", "image": "https://picsum.photos/id/1043/900/1000" },
+      { "title": "Home Suspenso Loa", "image": "https://picsum.photos/id/1060/900/1000" },
+      { "title": "Painel Bali", "image": "https://picsum.photos/id/1050/900/1000" }
+    ],
+    "blogPosts": [
+      { "title": "Relatório de Transparência e Igualdade Salarial de Mulheres e Homens - 2º Semestre 2025", "image": "https://picsum.photos/id/1021/900/1000" },
+      { "title": "Relatório de Transparência e Igualdade Salarial de Mulheres e Homens - 1º Semestre 2025", "image": "https://picsum.photos/id/1035/900/1000" },
+      { "title": "Relatório de Transparência e Igualdade Salarial de Mulheres e Homens - 1º Semestre 2024", "image": "https://picsum.photos/id/1005/900/1000" },
+      { "title": "Calendário Moveleiro: saiba quais feiras todo lojista de móveis precisa conferir em 2023.", "image": "https://picsum.photos/id/1011/900/1000" }
+    ]
+  },
+  "about": {
+    "heroTitle": "29 anos",
+    "heroDescription": "Ao completar 29 anos, a Colibri se orgulha de ter conquistado a confiança de todos aqueles com os quais se relaciona. E, para que bons negócios aconteçam, confiança é fundamental.",
+    "heroImage": "https://images.unsplash.com/photo-1616627981455-efdbb7f7eb4a?auto=format&fit=crop&w=1600&q=80",
+    "featuredTitle": "Para a Colibri qualidade é sinônimo de confiança.",
+    "featuredParagraph1": "Todo processo de elaboração e produção dos móveis Colibri é rigoroso e constantemente avaliado. Desde o desenho feito por mãos criativas, que estudam e transformam as necessidades do público consumidor em belas obras de decoração.",
+    "featuredParagraph2": "Tudo que desenvolvemos e produzimos carrega o capricho, a dedicação e o know how de quase 30 anos, que destacam a Colibri como referência no mercado moveleiro."
+  },
+  "contact": {
+    "heroTitle": "Fale conosco",
+    "heroDescription": "Precisa falar conosco? Entre em contato por um de nossos canais de atendimento, estamos prontos para atendê-lo.",
+    "heroImage": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80",
+    "questionTitle": "Como você prefere falar com a gente?",
+    "commercialTitle": "Contato comercial",
+    "commercialDescription": "Tem alguma dúvida? Podemos te ajudar pelo nosso canal de e-mail ou telefone!",
+    "commercialEmail": "contato@colibrimoveis.com.br",
+    "commercialPhone": "(43) 3275-8600",
+    "careersTitle": "Trabalhe conosco",
+    "careersDescription": "Envie seu currículo para nosso banco de talentos pelo e-mail:",
+    "careersEmail": "rh@colibrimoveis.com.br",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.059324874322!2d-51.42910998451757!3d-23.458324484734096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eca1f6c7a2f84b%3A0x17b1e296c7ded22b!2sColibri+M%C3%B3veis!5e0!3m2!1spt-BR!2sbr!4v1548704341989"
+  },
+  "seo": {
+    "siteTitle": "Colibri Móveis",
+    "defaultDescription": "Colibri Móveis: design, qualidade e funcionalidade para sua sala de estar.",
+    "canonicalBase": "https://www.colibrimoveis.com.br",
+    "indexable": true,
+    "metaVerification": "",
+    "pages": {
+      "home": {
+        "title": "Colibri Móveis",
+        "description": "Móveis para sua vida. Conheça linhas, produtos e novidades da Colibri Móveis."
+      },
+      "products": {
+        "title": "Produtos - Colibri Móveis",
+        "description": "Confira o catálogo completo de produtos Colibri."
+      },
+      "product": {
+        "title": "Detalhe do Produto - Colibri Móveis",
+        "description": "Detalhes técnicos, medidas e materiais dos produtos Colibri."
+      },
+      "about": {
+        "title": "Sobre - Colibri Móveis",
+        "description": "Conheça a história e os valores da Colibri Móveis."
+      },
+      "contact": {
+        "title": "Fale Conosco - Colibri Móveis",
+        "description": "Entre em contato com a equipe Colibri."
+      },
+      "blog": {
+        "title": "Blog - Colibri Móveis",
+        "description": "Artigos e conteúdos do universo Colibri."
+      },
+      "post": {
+        "title": "Post - Colibri Móveis",
+        "description": "Conteúdo do blog Colibri."
+      }
+    }
+  },
+  "analytics": {
+    "gaMeasurementId": "",
+    "gtmId": "",
+    "facebookPixelId": "",
+    "customHeadScript": "",
+    "customBodyScript": ""
+  },
+  "catalog": {
+    "title": "Catálogo",
+    "allLabel": "Todos",
+    "categories": ["Home Suspenso", "Home Theater", "Bancada", "Complementos", "Bancada e painel"],
+    "products": [
+      { "title": "Bancada Fortaleza", "image": "https://picsum.photos/id/1033/800/600", "href": "produto.html" },
+      { "title": "Home Theater Jordão", "image": "https://picsum.photos/id/1043/800/600", "href": "produto.html" },
+      { "title": "Home Suspenso Loa", "image": "https://picsum.photos/id/1060/800/600", "href": "produto.html" },
+      { "title": "Painel Bali", "image": "https://picsum.photos/id/1050/800/600", "href": "produto.html" },
+      { "title": "Bancada Otawa", "image": "https://picsum.photos/id/1044/800/600", "href": "produto.html" },
+      { "title": "Home Theater Jurerê 1.8", "image": "https://picsum.photos/id/1038/800/600", "href": "produto.html" }
+    ]
+  },
+  "productDetail": {
+    "name": "Home Theater Jurerê 1.8",
+    "code": "106",
+    "category": "Sala de Estar",
+    "description": "Com design contemporâneo e acabamento premium, o Home Theater Jurerê 1.8 combina funcionalidade e elegância para transformar a sala em um ambiente sofisticado e acolhedor.",
+    "specs": [
+      { "label": "largura", "value": "1800", "unit": "mm" },
+      { "label": "altura", "value": "1850", "unit": "mm" },
+      { "label": "profundidade", "value": "355", "unit": "mm" },
+      { "label": "peso", "value": "42,40", "unit": "kg" },
+      { "label": "TV", "value": "até 75", "unit": "\"" }
+    ],
+    "variants": [
+      {
+        "name": "Freijó Off White",
+        "color": "#caa17d",
+        "top": [
+          "https://picsum.photos/id/1060/1300/900",
+          "https://picsum.photos/id/1033/1300/900",
+          "https://picsum.photos/id/1044/1300/900"
+        ],
+        "bottom": "https://picsum.photos/id/1025/1200/900"
+      },
+      {
+        "name": "Freijó Preto Fosco",
+        "color": "#2b2b2b",
+        "top": [
+          "https://picsum.photos/id/1038/1300/900",
+          "https://picsum.photos/id/1043/1300/900",
+          "https://picsum.photos/id/1050/1300/900"
+        ],
+        "bottom": "https://picsum.photos/id/1015/1200/900"
+      },
+      {
+        "name": "Natura Off White",
+        "color": "#efefef",
+        "top": [
+          "https://picsum.photos/id/1020/1300/900",
+          "https://picsum.photos/id/1031/1300/900",
+          "https://picsum.photos/id/1062/1300/900"
+        ],
+        "bottom": "https://picsum.photos/id/1005/1200/900"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "Colibri - Indústria e Comércio de Móveis LTDA",
+    "addressLines": [
+      "Rua Rouxinol, 5530 - Pq. Industrial IV",
+      "Arapongas . Paraná . Brasil",
+      "contato@colibrimoveis.com.br"
+    ]
+  }
+}

@@ -1,0 +1,1481 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Admin - Colibri</title>
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <aside class="admin-sidebar" id="adminSidebar">
+        <a href="index.html" class="brand" aria-label="Voltar ao site">
+          <img src="https://www.colibrimoveis.com.br/assets/images/logo.png" alt="Colibri" />
+          <span>Admin</span>
+        </a>
+
+        <nav class="nav-group" aria-label="Navegação principal">
+          <button class="nav-item active" data-panel="dashboard">Dashboard</button>
+          <div class="nav-section" id="contentNavSection">
+            <button class="nav-item has-submenu" data-panel="content" data-group="content" data-submenu="contentNavSubmenu">
+              <span>Conteúdo do site</span>
+              <span class="nav-caret">▾</span>
+            </button>
+            <div class="nav-submenu" id="contentNavSubmenu">
+              <button class="nav-subitem" data-panel="content">Página inicial</button>
+              <button class="nav-subitem" data-panel="content-about">Sobre</button>
+              <button class="nav-subitem" data-panel="content-contact">Fale Conosco</button>
+            </div>
+          </div>
+          <div class="nav-section" id="productsNavSection">
+            <button class="nav-item has-submenu" data-panel="products" data-group="products" data-submenu="productsNavSubmenu">
+              <span>Produtos</span>
+              <span class="nav-caret">▾</span>
+            </button>
+            <div class="nav-submenu" id="productsNavSubmenu">
+              <button class="nav-subitem" data-panel="products">Produtos</button>
+              <button class="nav-subitem" data-panel="products-categories">Categorias</button>
+            </div>
+          </div>
+          <div class="nav-section" id="blogNavSection">
+            <button class="nav-item has-submenu" data-panel="blog" data-group="blog" data-submenu="blogNavSubmenu">
+              <span>Blog</span>
+              <span class="nav-caret">▾</span>
+            </button>
+            <div class="nav-submenu" id="blogNavSubmenu">
+              <button class="nav-subitem" data-panel="blog">Postagens</button>
+              <button class="nav-subitem" data-panel="blog-categories">Categorias</button>
+            </div>
+          </div>
+          <button class="nav-item" data-panel="seo-tags">SEO e Tags</button>
+          <button class="nav-item" data-panel="users">Usuários</button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="ghost" id="toggleSidebar" type="button">Recolher menu</button>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="topbar-left">
+            <h1>Gestão de Conteúdo</h1>
+            <p>Painel central para administrar páginas, produtos, usuários e publicações.</p>
+          </div>
+
+          <div class="topbar-right">
+            <label class="search-box" aria-label="Buscar">
+              <input type="search" placeholder="Buscar página, produto, usuário..." />
+            </label>
+            <button class="avatar" aria-label="Perfil">MM</button>
+          </div>
+        </header>
+
+        <nav class="admin-breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li>
+              <button id="breadcrumbHome" class="crumb-home" type="button">Início</button>
+            </li>
+            <li class="crumb-sep" aria-hidden="true">/</li>
+            <li id="breadcrumbSection">Dashboard</li>
+            <li class="crumb-sep" id="breadcrumbSubSep" aria-hidden="true">/</li>
+            <li id="breadcrumbSubsection">Visão geral</li>
+          </ol>
+        </nav>
+
+        <main class="admin-content">
+          <section class="panel active" id="panel-dashboard">
+            <div class="cards-grid">
+              <article class="metric-card">
+                <span class="kicker">Páginas publicadas</span>
+                <strong>24</strong>
+                <small>+3 esta semana</small>
+              </article>
+              <article class="metric-card">
+                <span class="kicker">Produtos ativos</span>
+                <strong>186</strong>
+                <small>12 em revisão</small>
+              </article>
+              <article class="metric-card">
+                <span class="kicker">Posts no blog</span>
+                <strong>42</strong>
+                <small>2 rascunhos</small>
+              </article>
+              <article class="metric-card accent">
+                <span class="kicker">Usuários internos</span>
+                <strong>8</strong>
+                <small>4 editores, 2 admins</small>
+              </article>
+            </div>
+
+            <div class="split-grid">
+              <section class="surface">
+                <header>
+                  <h2>Últimas alterações</h2>
+                  <button class="link-btn" type="button">ver histórico</button>
+                </header>
+                <ul class="activity-list">
+                  <li>
+                    <strong>Hero da Home</strong>
+                    <span>Atualizado por Ana Souza • há 18 min</span>
+                    <em class="tag draft">Rascunho</em>
+                  </li>
+                  <li>
+                    <strong>Produto: Home Theater Jurerê 1.8</strong>
+                    <span>Atualizado por Marcelo • há 42 min</span>
+                    <em class="tag review">Em revisão</em>
+                  </li>
+                  <li>
+                    <strong>Menu principal</strong>
+                    <span>Atualizado por Carla Lima • hoje</span>
+                    <em class="tag published">Publicado</em>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="surface">
+                <header>
+                  <h2>Fluxo de publicação</h2>
+                  <button class="link-btn" type="button">configurar</button>
+                </header>
+                <div class="flow">
+                  <div class="flow-step done"><span>1</span><p>Edição</p></div>
+                  <div class="flow-step current"><span>2</span><p>Revisão</p></div>
+                  <div class="flow-step"><span>3</span><p>Aprovação</p></div>
+                  <div class="flow-step"><span>4</span><p>Publicação</p></div>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-content">
+            <div class="surface">
+              <header>
+                <h2>Gestão da Página Inicial</h2>
+                <button class="primary small" id="openHomeContentEditor" type="button">Editar página inicial</button>
+              </header>
+
+              <div class="content-list-view active" id="contentListView">
+                <div class="table-wrap">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Seção</th>
+                        <th>Tipo de conteúdo</th>
+                        <th>Última atualização</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Hero e Slider</td>
+                        <td>Títulos, CTA, imagens desktop/mobile, ordem e visibilidade</td>
+                        <td>Ana Souza • hoje</td>
+                        <td><span class="tag published">Publicado</span></td>
+                        <td class="actions-cell">
+                          <button class="icon-action" type="button" data-open-home-editor data-tab-target="hero" title="Editar seção" aria-label="Editar seção Hero">✎</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Inspiração</td>
+                        <td>Imagem, texto, botão e link</td>
+                        <td>Carla Lima • ontem</td>
+                        <td><span class="tag published">Publicado</span></td>
+                        <td class="actions-cell">
+                          <button class="icon-action" type="button" data-open-home-editor data-tab-target="inspiracao" title="Editar seção" aria-label="Editar seção Inspiração">✎</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Produtos mais procurados</td>
+                        <td>Título, descrição, itens em destaque e ordenação</td>
+                        <td>Marcelo • hoje</td>
+                        <td><span class="tag review">Em revisão</span></td>
+                        <td class="actions-cell">
+                          <button class="icon-action" type="button" data-open-home-editor data-tab-target="produtos" title="Editar seção" aria-label="Editar seção Produtos">✎</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Blog</td>
+                        <td>Título, chamada, botão e posts em destaque</td>
+                        <td>Ana Souza • 2 dias</td>
+                        <td><span class="tag published">Publicado</span></td>
+                        <td class="actions-cell">
+                          <button class="icon-action" type="button" data-open-home-editor data-tab-target="blog" title="Editar seção" aria-label="Editar seção Blog">✎</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Newsletter</td>
+                        <td>Imagem de fundo, overlay, título, textos e formulário</td>
+                        <td>Carla Lima • hoje</td>
+                        <td><span class="tag draft">Rascunho</span></td>
+                        <td class="actions-cell">
+                          <button class="icon-action" type="button" data-open-home-editor data-tab-target="newsletter" title="Editar seção" aria-label="Editar seção Newsletter">✎</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Footer</td>
+                        <td>Logo, colunas de links, contatos, redes sociais e textos legais</td>
+                        <td>Marcelo • 3 dias</td>
+                        <td><span class="tag published">Publicado</span></td>
+                        <td class="actions-cell">
+                          <button class="icon-action" type="button" data-open-home-editor data-tab-target="footer" title="Editar seção" aria-label="Editar seção Footer">✎</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SEO da Home</td>
+                        <td>Metadados, Open Graph, canonical e indexação</td>
+                        <td>Ana Souza • hoje</td>
+                        <td><span class="tag review">Em revisão</span></td>
+                        <td class="actions-cell">
+                          <button class="icon-action" type="button" data-open-home-editor data-tab-target="seo" title="Editar seção" aria-label="Editar seção SEO">✎</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="content-home-view" id="contentHomeView">
+                <div class="product-form-tabs content-form-tabs" role="tablist" aria-label="Gestão da Home">
+                  <button class="content-tab active" type="button" data-target="hero">Hero</button>
+                  <button class="content-tab" type="button" data-target="inspiracao">Inspiração</button>
+                  <button class="content-tab" type="button" data-target="produtos">Produtos</button>
+                  <button class="content-tab" type="button" data-target="blog">Blog</button>
+                  <button class="content-tab" type="button" data-target="newsletter">Newsletter</button>
+                  <button class="content-tab" type="button" data-target="footer">Footer</button>
+                  <button class="content-tab" type="button" data-target="seo">SEO</button>
+                </div>
+
+                <form class="product-form content-form" id="homeContentForm">
+                  <section class="content-tab-panel active" data-panel="hero">
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Título principal</span>
+                        <input id="homeHeroTitleInput" type="text" value="Móveis para sua vida" />
+                      </label>
+                      <label class="field">
+                        <span>Subtítulo</span>
+                        <input id="homeHeroSubtitleInput" type="text" value="Coleção 2025" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Texto vertical da imagem</span>
+                        <input type="text" value="Bancada Fortaleza" />
+                      </label>
+                      <label class="field">
+                        <span>Rótulo do botão CTA</span>
+                        <input id="homeHeroCtaTextInput" type="text" value="Conheça nossos Produtos" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Link do botão CTA</span>
+                        <input id="homeHeroCtaLinkInput" type="url" value="/produtos" />
+                      </label>
+                      <label class="field">
+                        <span>Altura da seção (px)</span>
+                        <input type="number" value="760" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Cor do texto</span>
+                        <input type="color" value="#222637" />
+                      </label>
+                      <label class="field">
+                        <span>Intervalo do slide (ms)</span>
+                        <input type="number" value="5000" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Layout do Hero</span>
+                        <select>
+                          <option selected>Texto à esquerda e imagem à direita</option>
+                          <option>Texto centralizado com imagem de fundo</option>
+                          <option>Imagem total com texto sobreposto</option>
+                        </select>
+                      </label>
+                      <div class="field">
+                        <span>Catálogo da campanha (PDF)</span>
+                        <div class="dropzone" data-dropzone>
+                          <p>Arraste o arquivo PDF da campanha.</p>
+                          <div class="dropzone-actions">
+                            <button type="button">Selecionar PDF</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Exibir autoplay</span>
+                        <button type="button" class="binary-toggle is-on" data-state="true"><span>Sim</span></button>
+                      </label>
+                      <label class="field">
+                        <span>Exibir controles</span>
+                        <button type="button" class="binary-toggle is-on" data-state="true"><span>Sim</span></button>
+                      </label>
+                    </div>
+
+                    <div class="surface inset">
+                      <header>
+                        <h3>Slides do Hero</h3>
+                        <button class="row-btn" type="button">Adicionar slide</button>
+                      </header>
+                      <div class="table-wrap">
+                        <table class="admin-table">
+                          <thead>
+                            <tr>
+                              <th>Miniatura</th>
+                              <th>Título do slide</th>
+                              <th>Imagem desktop</th>
+                              <th>Ordem</th>
+                              <th>Status</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><img class="thumb" src="https://picsum.photos/id/1043/120/90" alt="Slide 1" /></td>
+                              <td>Bancada Fortaleza</td>
+                              <td>hero-slide-01.jpg</td>
+                              <td>1</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar slide" aria-label="Editar slide">✎</button>
+                                <button class="icon-action" type="button" title="Duplicar slide" aria-label="Duplicar slide">⧉</button>
+                                <button class="icon-action" type="button" title="Excluir slide" aria-label="Excluir slide">X</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><img class="thumb" src="https://picsum.photos/id/1060/120/90" alt="Slide 2" /></td>
+                              <td>Home Suspenso Loa</td>
+                              <td>hero-slide-02.jpg</td>
+                              <td>2</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar slide" aria-label="Editar slide">✎</button>
+                                <button class="icon-action" type="button" title="Duplicar slide" aria-label="Duplicar slide">⧉</button>
+                                <button class="icon-action" type="button" title="Excluir slide" aria-label="Excluir slide">X</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="content-tab-panel" data-panel="inspiracao">
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Título da seção</span>
+                        <input id="homeInspirationTitleInput" type="text" value="A natureza foi nossa inspiração" />
+                      </label>
+                      <label class="field">
+                        <span>Texto do botão</span>
+                        <input id="homeInspirationButtonTextInput" type="text" value="todos os produtos" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Descrição</span>
+                        <textarea id="homeInspirationDescriptionInput" rows="5">E às águas do planeta rendemos nossa homenagem. Cada produto leva o nome de uma delas e a beleza de todas.</textarea>
+                      </label>
+                      <div class="field">
+                        <span>Imagem da seção</span>
+                        <div class="dropzone" data-dropzone>
+                          <p>Arraste a imagem principal da inspiração aqui.</p>
+                          <div class="dropzone-actions">
+                            <button type="button">Selecionar imagem</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Link do botão</span>
+                        <input id="homeInspirationButtonLinkInput" type="url" value="/produtos" />
+                      </label>
+                      <label class="field">
+                        <span>Cor de destaque</span>
+                        <input type="color" value="#1ad174" />
+                      </label>
+                    </div>
+                  </section>
+
+                  <section class="content-tab-panel" data-panel="produtos">
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Título da seção</span>
+                        <input id="homePopularTitleInput" type="text" value="Produtos mais procurados." />
+                      </label>
+                      <label class="field">
+                        <span>Texto do botão</span>
+                        <input id="homePopularButtonTextInput" type="text" value="todos os produtos" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Descrição</span>
+                        <textarea id="homePopularDescriptionInput" rows="4">Esses são os produtos mais acessados em nosso site. Que tal conhecê-los?</textarea>
+                      </label>
+                      <label class="field">
+                        <span>Quantidade de produtos</span>
+                        <input type="number" value="4" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Link do botão</span>
+                        <input id="homePopularButtonLinkInput" type="url" value="/produtos" />
+                      </label>
+                      <label class="field">
+                        <span>Selecionar automaticamente pelos mais vistos</span>
+                        <button type="button" class="binary-toggle is-on" data-state="true"><span>Sim</span></button>
+                      </label>
+                    </div>
+
+                    <div class="surface inset">
+                      <header>
+                        <h3>Produtos em destaque na Home</h3>
+                        <button class="row-btn" type="button">Adicionar produto</button>
+                      </header>
+                      <div class="table-wrap">
+                        <table class="admin-table">
+                          <thead>
+                            <tr>
+                              <th>Miniatura</th>
+                              <th>Produto</th>
+                              <th>Categoria</th>
+                              <th>Ordem</th>
+                              <th>Status</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><img class="thumb" src="https://picsum.photos/id/1043/120/90" alt="Produto destaque 1" /></td>
+                              <td>Home Theater Jurerê 1.8</td>
+                              <td>Sala de Estar</td>
+                              <td>1</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar" aria-label="Editar">✎</button>
+                                <button class="icon-action" type="button" title="Reordenar" aria-label="Reordenar">↕</button>
+                                <button class="icon-action" type="button" title="Excluir" aria-label="Excluir">X</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><img class="thumb" src="https://picsum.photos/id/1033/120/90" alt="Produto destaque 2" /></td>
+                              <td>Bancada Fortaleza</td>
+                              <td>Sala de Estar</td>
+                              <td>2</td>
+                              <td><span class="tag review">Em revisão</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar" aria-label="Editar">✎</button>
+                                <button class="icon-action" type="button" title="Reordenar" aria-label="Reordenar">↕</button>
+                                <button class="icon-action" type="button" title="Excluir" aria-label="Excluir">X</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="content-tab-panel" data-panel="blog">
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Título da seção</span>
+                        <input id="homeBlogTitleInput" type="text" value="Conheça nosso blog." />
+                      </label>
+                      <label class="field">
+                        <span>Texto do botão</span>
+                        <input id="homeBlogButtonTextInput" type="text" value="todos os posts" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Descrição</span>
+                        <textarea id="homeBlogDescriptionInput" rows="4">Artigos escritos com muito carinho pra ajudar você a viver melhor e mostrar um pouco do universo Colibri!</textarea>
+                      </label>
+                      <label class="field">
+                        <span>Link do botão</span>
+                        <input id="homeBlogButtonLinkInput" type="url" value="/blog" />
+                      </label>
+                    </div>
+
+                    <div class="surface inset">
+                      <header>
+                        <h3>Posts exibidos na Home</h3>
+                        <button class="row-btn" type="button">Adicionar post</button>
+                      </header>
+                      <div class="table-wrap">
+                        <table class="admin-table">
+                          <thead>
+                            <tr>
+                              <th>Miniatura</th>
+                              <th>Título</th>
+                              <th>Data</th>
+                              <th>Ordem</th>
+                              <th>Status</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><img class="thumb" src="https://picsum.photos/id/1027/120/90" alt="Post 1" /></td>
+                              <td>Relatório de Transparência e Igualdade Salarial</td>
+                              <td>15/07/2025</td>
+                              <td>1</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar post" aria-label="Editar post">✎</button>
+                                <button class="icon-action" type="button" title="Visualizar post" aria-label="Visualizar post">↗</button>
+                                <button class="icon-action" type="button" title="Excluir post" aria-label="Excluir post">X</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><img class="thumb" src="https://picsum.photos/id/103/120/90" alt="Post 2" /></td>
+                              <td>Calendário Moveleiro: feiras para lojistas</td>
+                              <td>10/01/2025</td>
+                              <td>2</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar post" aria-label="Editar post">✎</button>
+                                <button class="icon-action" type="button" title="Visualizar post" aria-label="Visualizar post">↗</button>
+                                <button class="icon-action" type="button" title="Excluir post" aria-label="Excluir post">X</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="content-tab-panel" data-panel="newsletter">
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Título da seção</span>
+                        <input id="homeNewsletterTitleInput" type="text" value="Newsletter" />
+                      </label>
+                      <label class="field">
+                        <span>Placeholder do campo de e-mail</span>
+                        <input id="homeNewsletterPlaceholderInput" type="text" value="E-mail" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Descrição</span>
+                        <textarea id="homeNewsletterDescriptionInput" rows="4">Digite seu endereço de e-mail abaixo e receba novidades e ofertas promocionais da nossa equipe especializada.</textarea>
+                      </label>
+                      <div class="field">
+                        <span>Imagem de fundo</span>
+                        <div class="dropzone" data-dropzone>
+                          <p>Arraste imagem de fundo da newsletter.</p>
+                          <div class="dropzone-actions">
+                            <button type="button">Selecionar imagem</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Cor do overlay</span>
+                        <input type="color" value="#1d1f30" />
+                      </label>
+                      <label class="field">
+                        <span>Opacidade do overlay (0 a 1)</span>
+                        <input type="number" min="0" max="1" step="0.05" value="0.72" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Texto do botão</span>
+                        <input id="homeNewsletterButtonTextInput" type="text" value="Inscreva-se!" />
+                      </label>
+                      <label class="field">
+                        <span>Exibir consentimento LGPD</span>
+                        <button type="button" class="binary-toggle is-on" data-state="true"><span>Sim</span></button>
+                      </label>
+                    </div>
+                  </section>
+
+                  <section class="content-tab-panel" data-panel="footer">
+                    <div class="field-grid cols-2">
+                      <div class="field">
+                        <span>Logotipo do footer</span>
+                        <div class="dropzone" data-dropzone>
+                          <p>Arraste o logotipo do footer aqui.</p>
+                          <div class="dropzone-actions">
+                            <button type="button">Selecionar imagem</button>
+                          </div>
+                        </div>
+                      </div>
+                      <label class="field">
+                        <span>Texto de copyright</span>
+                        <input id="homeFooterCopyrightInput" type="text" value="Colibri - Indústria e Comércio de Móveis LTDA" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Endereço</span>
+                        <textarea id="homeFooterAddressInput" rows="3">Rua Rouxinol, 5530 - Pq. Industrial IV, Arapongas - Paraná - Brasil</textarea>
+                      </label>
+                      <label class="field">
+                        <span>E-mail principal</span>
+                        <input id="homeFooterEmailInput" type="email" value="contato@colibrimoveis.com.br" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Telefone</span>
+                        <input type="text" value="+55 (43) 3274-5200" />
+                      </label>
+                      <label class="field">
+                        <span>WhatsApp</span>
+                        <input type="text" value="+55 (43) 99999-9999" />
+                      </label>
+                    </div>
+
+                    <div class="surface inset">
+                      <header>
+                        <h3>Colunas de links do footer</h3>
+                        <button class="row-btn" type="button">Adicionar link</button>
+                      </header>
+                      <div class="table-wrap">
+                        <table class="admin-table">
+                          <thead>
+                            <tr>
+                              <th>Coluna</th>
+                              <th>Rótulo</th>
+                              <th>URL</th>
+                              <th>Ordem</th>
+                              <th>Status</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>A Colibri</td>
+                              <td>Quem somos</td>
+                              <td>/sobre</td>
+                              <td>1</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar link" aria-label="Editar link">✎</button>
+                                <button class="icon-action" type="button" title="Duplicar link" aria-label="Duplicar link">⧉</button>
+                                <button class="icon-action" type="button" title="Excluir link" aria-label="Excluir link">X</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Sala de Estar</td>
+                              <td>Home Theater</td>
+                              <td>/produtos/sala-de-estar/home-theater</td>
+                              <td>2</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar link" aria-label="Editar link">✎</button>
+                                <button class="icon-action" type="button" title="Duplicar link" aria-label="Duplicar link">⧉</button>
+                                <button class="icon-action" type="button" title="Excluir link" aria-label="Excluir link">X</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="surface inset">
+                      <header>
+                        <h3>Redes sociais</h3>
+                        <button class="row-btn" type="button">Adicionar rede</button>
+                      </header>
+                      <div class="table-wrap">
+                        <table class="admin-table">
+                          <thead>
+                            <tr>
+                              <th>Rede</th>
+                              <th>URL</th>
+                              <th>Status</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Instagram</td>
+                              <td>https://instagram.com/colibri</td>
+                              <td><span class="tag published">Ativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar rede" aria-label="Editar rede">✎</button>
+                                <button class="icon-action" type="button" title="Visualizar link" aria-label="Visualizar link">↗</button>
+                                <button class="icon-action" type="button" title="Excluir rede" aria-label="Excluir rede">X</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>YouTube</td>
+                              <td>https://youtube.com/colibri</td>
+                              <td><span class="tag draft">Inativo</span></td>
+                              <td class="actions-cell">
+                                <button class="icon-action" type="button" title="Editar rede" aria-label="Editar rede">✎</button>
+                                <button class="icon-action" type="button" title="Visualizar link" aria-label="Visualizar link">↗</button>
+                                <button class="icon-action" type="button" title="Excluir rede" aria-label="Excluir rede">X</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="content-tab-panel" data-panel="seo">
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Meta title</span>
+                        <input type="text" value="Colibri Móveis - Móveis para sua vida" />
+                      </label>
+                      <label class="field">
+                        <span>URL canônica</span>
+                        <input type="url" value="https://www.colibrimoveis.com.br/" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Meta description</span>
+                        <textarea rows="4">Conheça a coleção de móveis Colibri para transformar sua sala e ambientes com design, qualidade e funcionalidade.</textarea>
+                      </label>
+                      <label class="field">
+                        <span>Palavras-chave</span>
+                        <textarea rows="4">colibri móveis, home theater, bancada, painel, sala de estar</textarea>
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <div class="field">
+                        <span>Imagem Open Graph</span>
+                        <div class="dropzone" data-dropzone>
+                          <p>Arraste a imagem og:image da Home.</p>
+                          <div class="dropzone-actions">
+                            <button type="button">Selecionar imagem</button>
+                          </div>
+                        </div>
+                      </div>
+                      <label class="field">
+                        <span>Schema JSON-LD</span>
+                        <textarea rows="9">{ "@context": "https://schema.org", "@type": "WebPage" }</textarea>
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2">
+                      <label class="field">
+                        <span>Permitir indexação (index/follow)</span>
+                        <button type="button" class="binary-toggle is-on" data-state="true"><span>Sim</span></button>
+                      </label>
+                      <label class="field">
+                        <span>Data da última atualização SEO</span>
+                        <input type="date" value="2026-02-13" />
+                      </label>
+                    </div>
+                  </section>
+
+                  <div class="form-actions">
+                    <button class="ghost-light" id="closeHomeContentEditor" type="button">Voltar</button>
+                    <button class="primary" type="submit">Salvar alterações da Home</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-content-about">
+            <div class="surface">
+              <header>
+                <h2>Gestão da Página Sobre</h2>
+              </header>
+
+              <form class="product-form content-form" id="aboutContentForm">
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Título principal</span>
+                    <input id="aboutHeroTitleInput" type="text" value="29 anos" />
+                  </label>
+                  <label class="field">
+                    <span>Imagem principal (URL)</span>
+                    <input id="aboutHeroImageInput" data-image-upload="true" type="url" value="https://images.unsplash.com/photo-1616627981455-efdbb7f7eb4a?auto=format&fit=crop&w=1600&q=80" />
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Texto de destaque (banner)</span>
+                    <textarea id="aboutHeroDescriptionInput" rows="5">Ao completar 29 anos, a Colibri se orgulha de ter conquistado a confiança de todos aqueles com os quais se relaciona. E, para que bons negócios aconteçam, confiança é fundamental.</textarea>
+                  </label>
+                  <label class="field">
+                    <span>Título do bloco de conteúdo</span>
+                    <textarea id="aboutFeaturedTitleInput" rows="5">Para a Colibri qualidade é sinônimo de confiança.</textarea>
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Texto da coluna esquerda</span>
+                    <textarea id="aboutFeaturedParagraph1Input" rows="7">Todo processo de elaboração e produção dos móveis Colibri é rigoroso e constantemente avaliado. Desde o desenho feito por mãos criativas, que estudam e transformam as necessidades do público consumidor em belas obras de decoração.</textarea>
+                  </label>
+                  <label class="field">
+                    <span>Texto da coluna direita</span>
+                    <textarea id="aboutFeaturedParagraph2Input" rows="7">Tudo que desenvolvemos e produzimos carrega o capricho, a dedicação e o know how de quase 30 anos, que destacam a Colibri como referência no mercado moveleiro.</textarea>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <button class="primary" type="submit">Salvar e publicar</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-content-contact">
+            <div class="surface">
+              <header>
+                <h2>Gestão da Página Fale Conosco</h2>
+              </header>
+
+              <form class="product-form content-form" id="contactContentForm">
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Título principal</span>
+                    <input id="contactHeroTitleInput" type="text" value="Fale conosco" />
+                  </label>
+                  <label class="field">
+                    <span>Imagem principal (URL)</span>
+                    <input id="contactHeroImageInput" data-image-upload="true" type="url" value="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80" />
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Texto de abertura</span>
+                    <textarea id="contactHeroDescriptionInput" rows="5">Precisa falar conosco? Entre em contato por um de nossos canais de atendimento, estamos prontos para atendê-lo.</textarea>
+                  </label>
+                  <label class="field">
+                    <span>Título da seção de canais</span>
+                    <input id="contactQuestionTitleInput" type="text" value="Como você prefere falar com a gente?" />
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Título do bloco comercial</span>
+                    <input id="contactCommercialTitleInput" type="text" value="Contato comercial" />
+                  </label>
+                  <label class="field">
+                    <span>Descrição do bloco comercial</span>
+                    <textarea id="contactCommercialDescriptionInput" rows="3">Tem alguma dúvida? Podemos te ajudar pelo nosso canal de e-mail ou telefone!</textarea>
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>E-mail comercial</span>
+                    <input id="contactCommercialEmailInput" type="email" value="contato@colibrimoveis.com.br" />
+                  </label>
+                  <label class="field">
+                    <span>Telefone comercial</span>
+                    <input id="contactCommercialPhoneInput" type="text" value="(43) 3275-8600" />
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Título do bloco RH</span>
+                    <input id="contactCareersTitleInput" type="text" value="Trabalhe conosco" />
+                  </label>
+                  <label class="field">
+                    <span>Descrição do bloco RH</span>
+                    <textarea id="contactCareersDescriptionInput" rows="3">Envie seu currículo para nosso banco de talentos pelo e-mail:</textarea>
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>E-mail RH</span>
+                    <input id="contactCareersEmailInput" type="email" value="rh@colibrimoveis.com.br" />
+                  </label>
+                  <label class="field">
+                    <span>URL do mapa (iframe)</span>
+                    <textarea id="contactMapEmbedUrlInput" rows="3">https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.059324874322!2d-51.42910998451757!3d-23.458324484734096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eca1f6c7a2f84b%3A0x17b1e296c7ded22b!2sColibri+M%C3%B3veis!5e0!3m2!1spt-BR!2sbr!4v1548704341989</textarea>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <button class="primary" type="submit">Salvar e publicar</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-seo-tags">
+            <div class="surface">
+              <header>
+                <h2>SEO, Indexação e Tags</h2>
+              </header>
+
+              <form class="product-form content-form" id="seoTagsForm">
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Título base do site</span>
+                    <input id="seoSiteTitleInput" type="text" value="Colibri Móveis" />
+                  </label>
+                  <label class="field">
+                    <span>Descrição padrão</span>
+                    <input
+                      id="seoDefaultDescriptionInput"
+                      type="text"
+                      value="Colibri Móveis: design, qualidade e funcionalidade para sua sala de estar."
+                    />
+                  </label>
+                </div>
+
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>Domínio canônico</span>
+                    <input id="seoCanonicalBaseInput" type="url" value="https://www.colibrimoveis.com.br" />
+                  </label>
+                  <label class="field">
+                    <span>Permitir indexação (index/follow)</span>
+                    <button id="seoIndexToggle" type="button" class="binary-toggle is-on" data-state="true"><span>Sim</span></button>
+                  </label>
+                </div>
+
+                <div class="surface inset">
+                  <h3>Tags de análise e performance</h3>
+                  <div class="field-grid cols-2">
+                    <label class="field">
+                      <span>Google Analytics (GA4 Measurement ID)</span>
+                      <input id="analyticsGaIdInput" type="text" placeholder="G-XXXXXXXXXX" />
+                    </label>
+                    <label class="field">
+                      <span>Google Tag Manager (opcional)</span>
+                      <input id="analyticsGtmIdInput" type="text" placeholder="GTM-XXXXXXX" />
+                    </label>
+                  </div>
+
+                  <div class="field-grid cols-2">
+                    <label class="field">
+                      <span>Facebook Pixel ID</span>
+                      <input id="analyticsPixelIdInput" type="text" placeholder="123456789012345" />
+                    </label>
+                    <label class="field">
+                      <span>Meta verification (opcional)</span>
+                      <input id="seoMetaVerificationInput" type="text" placeholder="token de verificação" />
+                    </label>
+                  </div>
+                </div>
+
+                <div class="surface inset">
+                  <h3>Scripts customizados</h3>
+                  <div class="field-grid cols-1">
+                    <label class="field">
+                      <span>Script adicional no &lt;head&gt; (opcional)</span>
+                      <textarea id="analyticsCustomHeadInput" rows="4" placeholder="<script>...</script>"></textarea>
+                    </label>
+                  </div>
+                  <div class="field-grid cols-1">
+                    <label class="field">
+                      <span>Script adicional antes de &lt;/body&gt; (opcional)</span>
+                      <textarea id="analyticsCustomBodyInput" rows="4" placeholder="<script>...</script>"></textarea>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button class="primary" type="submit">Salvar e publicar</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-products">
+            <div class="surface">
+              <header>
+                <h2>Cadastro de Produto</h2>
+                <button class="primary small" id="openNewProductForm" type="button">Novo produto</button>
+              </header>
+
+              <div class="products-list-view active" id="productsListView">
+                <div class="table-wrap">
+                  <table class="admin-table products-table">
+                    <thead>
+                      <tr>
+                        <th>Miniatura</th>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody id="productsTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="product-form-view" id="productFormView">
+                <div class="product-form-tabs" role="tablist" aria-label="Cadastro de produto">
+                  <button class="product-tab active" type="button" data-target="dados">Dados</button>
+                  <button class="product-tab" type="button" data-target="dimensoes">Dimensões</button>
+                  <button class="product-tab" type="button" data-target="arquivos">Arquivos</button>
+                </div>
+
+                <form class="product-form" id="productForm">
+                  <section class="product-tab-panel active" data-panel="dados">
+                    <div class="field-grid cols-3">
+                      <label class="field">
+                        <span>Código</span>
+                        <input id="productCodeInput" type="text" />
+                      </label>
+                      <label class="field">
+                        <span>Nome</span>
+                        <input id="productNameInput" type="text" />
+                      </label>
+                      <label class="field">
+                        <span>Slug</span>
+                        <input id="productSlugInput" type="text" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-3">
+                      <label class="field">
+                        <span>Categoria</span>
+                        <select id="productCategorySelect"></select>
+                      </label>
+                      <label class="field">
+                        <span>Linha</span>
+                        <input id="productLineInput" type="text" />
+                      </label>
+                      <label class="field">
+                        <span>Lançamento</span>
+                        <button id="productReleaseToggle" type="button" class="binary-toggle" data-state="false"><span>Não</span></button>
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-2 align-top">
+                      <label class="field">
+                        <span>Descrição</span>
+                        <textarea id="productDescriptionInput" rows="8"></textarea>
+                      </label>
+
+                      <div class="field">
+                        <span>Imagem principal (URL)</span>
+                        <label class="field">
+                          <input id="productImageInput" data-image-upload="true" type="url" placeholder="https://..." />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="field-grid cols-4">
+                      <label class="field">
+                        <span>Volume</span>
+                        <input id="productVolumeInput" type="text" />
+                      </label>
+                      <label class="field">
+                        <span>Características</span>
+                        <input id="productFeaturesInput" type="text" />
+                      </label>
+                      <label class="field">
+                        <span>TV</span>
+                        <input id="productTvInput" type="text" />
+                      </label>
+                      <label class="field">
+                        <span>Ordem</span>
+                        <input id="productOrderInput" type="number" />
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-3">
+                      <label class="field">
+                        <span>Título do Vídeo</span>
+                        <input id="productVideoTitleInput" type="text" />
+                      </label>
+                      <label class="field">
+                        <span>Link do Youtube</span>
+                        <input id="productYoutubeInput" type="url" />
+                      </label>
+                      <label class="field">
+                        <span>Mostrar Vídeo?</span>
+                        <button id="productShowVideoToggle" type="button" class="binary-toggle" data-state="false"><span>Não</span></button>
+                      </label>
+                    </div>
+
+                    <div class="field-grid cols-4">
+                      <label class="field">
+                        <span>Status</span>
+                        <button id="productStatusToggle" type="button" class="binary-toggle" data-state="false"><span>Inativo</span></button>
+                      </label>
+                      <label class="field">
+                        <span>Mais procurado</span>
+                        <button id="productFeaturedToggle" type="button" class="binary-toggle" data-state="false"><span>Não</span></button>
+                      </label>
+                    </div>
+                  </section>
+
+                  <section class="product-tab-panel" data-panel="dimensoes">
+                    <div class="surface inset">
+                      <h3>Dimensões por variação</h3>
+                      <div class="table-wrap">
+                        <table class="admin-table">
+                          <thead>
+                            <tr>
+                              <th>Variação</th>
+                              <th>Largura (mm)</th>
+                              <th>Altura (mm)</th>
+                              <th>Profundidade (mm)</th>
+                              <th>Peso (kg)</th>
+                              <th>TV</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><input id="productVariantNameInput" type="text" value="Freijó Off White" /></td>
+                              <td><input id="productWidthInput" type="number" value="1800" /></td>
+                              <td><input id="productHeightInput" type="number" value="1850" /></td>
+                              <td><input id="productDepthInput" type="number" value="355" /></td>
+                              <td><input id="productWeightInput" type="text" value="42,40" /></td>
+                              <td><input id="productSpecTvInput" type="text" value="75" /></td>
+                            </tr>
+                            <tr>
+                              <td><input type="text" value="Freijó Preto Fosco" /></td>
+                              <td><input type="number" value="1800" /></td>
+                              <td><input type="number" value="1850" /></td>
+                              <td><input type="number" value="355" /></td>
+                              <td><input type="text" value="42,40" /></td>
+                              <td><input type="text" value="75" /></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <button class="row-btn" type="button">Adicionar variação</button>
+                    </div>
+                  </section>
+
+                  <section class="product-tab-panel" data-panel="arquivos">
+                    <div class="field-grid cols-2 align-top">
+                      <div class="field">
+                        <span>Esquema de montagem (PDF)</span>
+                        <label class="field">
+                          <input id="productAssemblyPdfInput" data-file-upload="true" data-file-accept="application/pdf,.pdf" type="url" placeholder="URL do PDF" />
+                        </label>
+                      </div>
+
+                      <div class="field">
+                        <span>Outros arquivos</span>
+                        <label class="field">
+                          <input id="productExtraFileInput" data-file-upload="true" data-file-accept="application/pdf,.pdf,image/*" type="url" placeholder="URL do arquivo" />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="surface inset">
+                      <h3>Arquivos anexados</h3>
+                      <ul class="file-list" id="productFilesList"></ul>
+                    </div>
+                  </section>
+
+                  <div class="form-actions">
+                    <button class="ghost-light" id="closeProductForm" type="button">Voltar</button>
+                    <button class="primary" type="submit">Salvar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-blog">
+            <div class="surface">
+              <header>
+                <h2>Postagens do Blog</h2>
+                <button class="primary small" id="openNewBlogForm" type="button">Novo post</button>
+              </header>
+
+              <div class="blog-list-view active" id="blogListView">
+                <div class="table-wrap">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Miniatura</th>
+                        <th>Título</th>
+                        <th>Categoria</th>
+                        <th>Publicação</th>
+                        <th>Status</th>
+                        <th>Destaque</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody id="blogPostsTableBody">
+                      <tr>
+                        <td colspan="7">Carregando posts...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="blog-form-view" id="blogFormView">
+                <form class="product-form blog-form" id="blogForm">
+                  <div class="field-grid cols-4">
+                    <label class="field">
+                      <span>Título</span>
+                      <input id="blogTitleInput" type="text" />
+                    </label>
+                    <label class="field">
+                      <span>Slug</span>
+                      <input id="blogSlugInput" type="text" />
+                    </label>
+                    <label class="field">
+                      <span>Publicado</span>
+                      <button id="blogPublishedToggle" type="button" class="binary-toggle" data-state="false"><span>Não</span></button>
+                    </label>
+                    <label class="field">
+                      <span>Destaque</span>
+                      <button id="blogFeaturedToggle" type="button" class="binary-toggle" data-state="false"><span>Não</span></button>
+                    </label>
+                  </div>
+
+                  <div class="field-grid cols-3">
+                    <label class="field with-addon">
+                      <span>Data de Publicação</span>
+                      <div class="input-addon">
+                        <input id="blogPublishDateInput" type="date" value="2026-02-13" />
+                        <button type="button" aria-label="Abrir calendário">📅</button>
+                      </div>
+                    </label>
+                    <label class="field">
+                      <span>Categoria</span>
+                      <select id="blogCategorySelect"></select>
+                    </label>
+                    <label class="field">
+                      <span>Meta tags (Separadas por vírgula)</span>
+                      <input id="blogMetaTagsInput" type="text" />
+                    </label>
+                  </div>
+
+                  <div class="field-grid cols-1">
+                    <label class="field">
+                      <span>Meta Description</span>
+                      <textarea id="blogMetaDescription" rows="3"></textarea>
+                    </label>
+                    <p class="meta-counter">Total de <span id="blogMetaDescriptionCount">0</span> caracteres</p>
+                  </div>
+
+                  <div class="field-grid cols-3">
+                    <div class="field">
+                      <span>Tempo de Leitura</span>
+                      <div class="reading-time-group">
+                        <input id="blogReadingMinutesInput" type="number" value="18" min="0" />
+                        <span>:</span>
+                        <input id="blogReadingSecondsInput" type="number" value="56" min="0" max="59" />
+                      </div>
+                    </div>
+                    <label class="field with-addon">
+                      <span>Data de atualização</span>
+                      <div class="input-addon">
+                        <input id="blogUpdateDateInput" type="date" value="2026-02-13" />
+                        <button type="button" aria-label="Abrir calendário">📅</button>
+                      </div>
+                    </label>
+                    <div class="field">
+                      <span>Imagem destacada</span>
+                      <div class="dropzone blog-thumb-drop" data-dropzone data-upload-target="blogImageUrlInput">
+                        <p>Arraste e solte a imagem de capa do post.</p>
+                        <div class="dropzone-actions">
+                          <button type="button">Selecionar imagem</button>
+                        </div>
+                      </div>
+                      <input id="blogImageUrlInput" data-image-upload="true" type="url" placeholder="URL da imagem de capa" />
+                    </div>
+                  </div>
+
+                  <div class="field-grid cols-1">
+                    <label class="field">
+                      <span>Conteúdo</span>
+                      <div class="editor-shell">
+                        <div class="editor-toolbar" aria-label="Ferramentas de edição">
+                          <button type="button">B</button>
+                          <button type="button">I</button>
+                          <button type="button">U</button>
+                          <button type="button">S</button>
+                          <button type="button">•</button>
+                          <button type="button">1.</button>
+                          <button type="button">🔗</button>
+                          <button type="button">🖼</button>
+                          <button type="button">↔</button>
+                          <button type="button">H2</button>
+                          <button type="button">H3</button>
+                          <button type="button">"</button>
+                        </div>
+                        <textarea id="blogContentInput" class="editor-area" rows="12"></textarea>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="ghost-light" id="closeBlogForm" type="button">Voltar</button>
+                    <button class="primary" type="submit">Salvar post</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-products-categories">
+            <div class="surface">
+              <header>
+                <h2>Categorias de Produtos</h2>
+                <button class="primary small" id="openNewProductCategoryForm" type="button">Nova categoria</button>
+              </header>
+
+              <div class="category-list-view active" id="productCategoriesListView">
+                <div class="table-wrap">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Slug</th>
+                        <th>Produtos vinculados</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody id="productCategoriesTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="category-form-view" id="productCategoryFormView">
+                <form class="product-form">
+                  <div class="field-grid cols-2">
+                    <label class="field">
+                      <span>Nome da categoria</span>
+                      <input id="productCategoryNameInput" type="text" />
+                    </label>
+                    <label class="field">
+                      <span>Slug</span>
+                      <input id="productCategorySlugInput" type="text" />
+                    </label>
+                  </div>
+
+                  <div class="field-grid cols-2">
+                    <label class="field">
+                      <span>Descrição</span>
+                      <textarea id="productCategoryDescriptionInput" rows="4"></textarea>
+                    </label>
+                    <label class="field">
+                      <span>Status</span>
+                      <button id="productCategoryStatusToggle" type="button" class="binary-toggle is-on" data-state="true"><span>Ativo</span></button>
+                    </label>
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="ghost-light" id="closeProductCategoryForm" type="button">Voltar</button>
+                    <button class="primary" id="saveProductCategoryBtn" type="submit">Salvar categoria</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-blog-categories">
+            <div class="surface">
+              <header>
+                <h2>Categorias do Blog</h2>
+                <button class="primary small" id="openNewBlogCategoryForm" type="button">Nova categoria</button>
+              </header>
+
+              <div class="category-list-view active" id="blogCategoriesListView">
+                <div class="table-wrap">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Slug</th>
+                        <th>Posts vinculados</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody id="blogCategoriesTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="category-form-view" id="blogCategoryFormView">
+                <form class="product-form">
+                  <div class="field-grid cols-2">
+                    <label class="field">
+                      <span>Nome da categoria</span>
+                      <input id="blogCategoryNameInput" type="text" />
+                    </label>
+                    <label class="field">
+                      <span>Slug</span>
+                      <input id="blogCategorySlugInput" type="text" />
+                    </label>
+                  </div>
+
+                  <div class="field-grid cols-2">
+                    <label class="field">
+                      <span>Descrição</span>
+                      <textarea id="blogCategoryDescriptionInput" rows="4"></textarea>
+                    </label>
+                    <label class="field">
+                      <span>Status</span>
+                      <button id="blogCategoryStatusToggle" type="button" class="binary-toggle is-on" data-state="true"><span>Ativo</span></button>
+                    </label>
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="ghost-light" id="closeBlogCategoryForm" type="button">Voltar</button>
+                    <button class="primary" id="saveBlogCategoryBtn" type="submit">Salvar categoria</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-users">
+            <div class="surface compact-center">
+              <h2>Módulo Usuários</h2>
+              <p>Controle de perfis, permissões e trilha de auditoria.</p>
+              <button class="primary" type="button">Gerenciar usuários</button>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">Salvo com sucesso.</div>
+    <div class="lightbox" id="imageLightbox" aria-hidden="true">
+      <button class="lightbox-close" id="closeLightbox" type="button" aria-label="Fechar">✕</button>
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

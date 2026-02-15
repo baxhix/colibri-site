@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Bloqueio do painel administrativo
+Disallow: /admin.html
+
+Sitemap: https://www.colibrimoveis.com.br/sitemap.xml
