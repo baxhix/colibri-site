@@ -32,4 +32,15 @@ jobs:
             cd infra/hostinger
             docker compose up -d --build
             docker compose ps
-            curl -fsS http://127.0.0.1:3000/health
+            # Wait until API is ready before failing the job.
+            for i in $(seq 1 30); do
+              if curl -fsS http://127.0.0.1:3000/health >/dev/null; then
+                echo "API health check passed"
+                exit 0
+              fi
+              echo "Waiting for API to be ready... ($i/30)"
+              sleep 2
+            done
+            echo "API health check failed after retries"
+            docker compose logs api --tail=80
+            exit 1
