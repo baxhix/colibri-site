@@ -34,7 +34,7 @@ jobs:
             docker compose ps
             # Wait until API is ready before failing the job.
             for i in $(seq 1 30); do
-              if curl -fsS http://127.0.0.1:3000/health >/dev/null; then
+              if curl -fsS http://127.0.0.1:8088/health >/dev/null; then
                 echo "API health check passed"
                 exit 0
               fi
